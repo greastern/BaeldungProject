@@ -17,4 +17,8 @@ public class Book {
 
     public Book() {
     }
+
+    public boolean getId() {
+        return false;
+    }
 }
