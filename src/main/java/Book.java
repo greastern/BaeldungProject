@@ -1,9 +1,6 @@
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-@entity
+@Entity
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -18,7 +15,7 @@ public class Book {
     public Book() {
     }
 
-    public boolean getId() {
-        return false;
+    public long getId() {
+        return this.id;
     }
 }

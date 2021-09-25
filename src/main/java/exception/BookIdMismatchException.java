@@ -1,2 +1,4 @@
-package exception;public class BookIdMismatchException {
+package exception;
+
+public class BookIdMismatchException extends Exception {
 }
