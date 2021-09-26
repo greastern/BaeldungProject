@@ -1,7 +1,10 @@
-import antlr.collections.List;
+import exception.BookIdMismatchException;
+import exception.BookNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/books")
@@ -39,7 +42,7 @@ public class BookController {
     }
 
     @PutMapping("/{id}")
-    public Book updateBook(@RequestBody Book book, @PathVariable Long id) {
+    public Book updateBook(@RequestBody Book book, @PathVariable Long id) throws BookIdMismatchException {
         if (book.getId() != id) {
             throw new BookIdMismatchException();
         }
@@ -47,6 +50,4 @@ public class BookController {
                 .orElseThrow(BookNotFoundException::new);
         return bookRepository.save(book);
     }
-}
-
 }
