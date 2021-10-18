@@ -12,7 +12,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="LoopFromHackerRank" options="-parameters" />
+      <module name="LoopFromHackerRank" options="" />
     </option>
   </component>
 </project>
